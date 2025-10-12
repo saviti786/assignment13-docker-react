@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Label>;
 export const Default: Story = {
   args: {
     text: "Default Label",
-    color: "#333",
+    color: "#114e04ff",
   },
 };
 
