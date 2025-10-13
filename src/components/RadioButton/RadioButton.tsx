@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { RadioButtonProps } from "./RadioButton.types";
 
@@ -20,14 +20,23 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   checked = false,
   disabled = false,
 }) => {
+  // Local state for toggling
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleChange = () => {
+    if (!disabled) {
+      setIsChecked(true);
+    }
+  };
+
   return (
     <StyledLabel $disabled={disabled}>
       <StyledInput
         type="radio"
         name={name}
-        checked={checked}
+        checked={isChecked}
+        onChange={handleChange}
         disabled={disabled}
-        readOnly
       />
       {label}
     </StyledLabel>

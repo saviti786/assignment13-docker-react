@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Assignment 12 – Web Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Author: Saviti Saviti
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Overview
+This project is a **React + Storybook Component Library** built using **TypeScript** and **Styled Components**.
 
-### `npm start`
+It demonstrates reusable and responsive UI components that can be used to build consistent interfaces.
+Each component supports both default and disabled states and has been tested for visibility and style changes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Components Included
+The library includes the following components:
 
-### `npm test`
+- Button
+- Label
+- Text
+- Table
+- Dropdown
+- Radio Button
+- Img
+- Hero Image
+- Card
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Each component contains the following files:
+- ComponentName.tsx
+- ComponentName.stories.tsx
+- ComponentName.test.tsx
+- ComponentName.types.tsx
+- index.ts
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tests
+Each component has at least **two Jest tests**:
+1. Checks that the component is visible in the DOM
+2. Confirms that the background or style changes when in the disabled state
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run all tests:
+npm test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Storybook
+Storybook provides a development environment to view and interact with components.
+<br>
+To start Storybook locally:
+<br>
+npm run storybook
 
-### `npm run eject`
+## Build and Run with Docker
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Build the Docker image:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+docker build -t lastName_firstName_coding_assignment12 .
+<br>
+docker run -d -p 8083:8083 --name lastName_firstName_coding_assignment12 lastName_firstName_coding_assignment12
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2.  **Open in browser:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+React App: http://localhost:8083/app/
+<br>
+Storybook: http://localhost:8083/storybook/
