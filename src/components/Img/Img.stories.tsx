@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Img } from "./Img";
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { Img } from './Img';
 
 const meta: Meta<typeof Img> = {
-  title: "Components/Img",
+  title: 'Components/Img',
   component: Img,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    src: { control: "text" },
-    alt: { control: "text" },
-    width: { control: "text" },
-    height: { control: "text" },
-    disabled: { control: "boolean" },
+    src: { control: 'text' },
+    alt: { control: 'text' },
+    width: { control: 'text' },
+    height: { control: 'text' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -19,20 +19,20 @@ type Story = StoryObj<typeof Img>;
 
 export const Default: Story = {
   args: {
-    src: "/happy.jpg",
-    alt: "Stay Happy",
-    width: "200px",
-    height: "200px",
+    src: '/happy.jpg',
+    alt: 'Stay Happy',
+    width: '200px',
+    height: '200px',
     disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    src: "/happy.jpg",
-    alt: "Stay Happy",
-    width: "200px",
-    height: "200px",
+    src: '/happy.jpg',
+    alt: 'Stay Happy',
+    width: '200px',
+    height: '200px',
     disabled: true,
   },
 };

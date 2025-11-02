@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { LabelProps } from "./Label.types";
+import React from 'react';
+import styled from 'styled-components';
+import { LabelProps } from './Label.types';
 
-const StyledLabel = styled.span<{ $color?: string;}>`
-  color: ${(props) => props.$color || "#333"};
+const StyledLabel = styled.span<{ $color?: string }>`
+  color: ${(props) => props.$color || '#333'};
   font-size: 1rem;
   font-weight: 500;
 `;

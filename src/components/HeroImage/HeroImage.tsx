@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { HeroImageProps } from "./HeroImage.types";
+import React from 'react';
+import styled from 'styled-components';
+import { HeroImageProps } from './HeroImage.types';
 
 const Wrapper = styled.div<{ $disabled?: boolean }>`
   position: relative;
@@ -9,7 +9,7 @@ const Wrapper = styled.div<{ $disabled?: boolean }>`
   overflow: hidden;
   border-radius: 10px;
   opacity: ${(props) => (props.$disabled ? 0.6 : 1)};
-  cursor: ${(props) => (props.$disabled ? "not-allowed" : "default")};
+  cursor: ${(props) => (props.$disabled ? 'not-allowed' : 'default')};
 `;
 
 const BackgroundImage = styled.img`
@@ -38,7 +38,9 @@ const Subtitle = styled.p`
   margin-top: 0.5rem;
 `;
 
-export const HeroImage: React.FC<HeroImageProps & React.HTMLAttributes<HTMLDivElement>> = ({
+export const HeroImage: React.FC<
+  HeroImageProps & React.HTMLAttributes<HTMLDivElement>
+> = ({
   src,
   alt,
   title,

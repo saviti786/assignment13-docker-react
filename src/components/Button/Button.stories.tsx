@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Button } from "./Button";
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+  title: 'Components/Button',
   component: Button,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: "color" },
-    label: { control: "text" },
-    disabled: { control: "boolean" },
+    backgroundColor: { control: 'color' },
+    label: { control: 'text' },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -17,8 +17,8 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    label: "Click Me",
-    backgroundColor: "Black",
+    label: 'Click Me',
+    backgroundColor: 'Black',
     disabled: false,
   },
 };
@@ -26,7 +26,7 @@ export const Default: Story = {
 export const Disabled: Story = {
   args: {
     label: "Can't click me",
-    backgroundColor: "#999999",
+    backgroundColor: '#999999',
     disabled: true,
   },
 };

@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { ImgProps } from "./Img.types";
+import React from 'react';
+import styled from 'styled-components';
+import { ImgProps } from './Img.types';
 
 const StyledImg = styled.img<{ $disabled?: boolean }>`
   display: block;
   max-width: 100%;
   height: auto;
   opacity: ${(props) => (props.$disabled ? 0.6 : 1)};
-  cursor: ${(props) => (props.$disabled ? "not-allowed" : "default")};
+  cursor: ${(props) => (props.$disabled ? 'not-allowed' : 'default')};
   border-radius: 8px;
 `;
 

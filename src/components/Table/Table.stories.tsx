@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
-import { Table } from "./Table";
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { Table } from './Table';
 
 const meta: Meta<typeof Table> = {
-  title: "Components/Table",
+  title: 'Components/Table',
   component: Table,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    disabled: { control: "boolean" },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -15,24 +15,24 @@ type Story = StoryObj<typeof Table>;
 
 export const Default: Story = {
   args: {
-    headers: ["Name", "Age"],
+    headers: ['Name', 'Age'],
     data: [
-      ["Alice", "25"],
-      ["Bob", "30"],
+      ['Alice', '25'],
+      ['Bob', '30'],
     ],
-    footer: ["Total", "2"],
+    footer: ['Total', '2'],
     disabled: false,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    headers: ["Name", "Age"],
+    headers: ['Name', 'Age'],
     data: [
-      ["Alice", "25"],
-      ["Bob", "30"],
+      ['Alice', '25'],
+      ['Bob', '30'],
     ],
-    footer: ["Total", "2"],
+    footer: ['Total', '2'],
     disabled: true,
   },
 };
