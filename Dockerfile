@@ -1,46 +1,27 @@
 # Stage 1: Build React App
-FROM node:20-alpine AS build-react
-WORKDIR /saviti_saviti_ui_garden
+FROM node:20-alpine AS build
 
-# Copy package.json and install dependencies
+# Set working directory inside the container
+WORKDIR /saviti_saviti_ui_garden_build_checks2
+
+# Copy package files and install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
-# Copy everything (including public/)
+# Copy all project files
 COPY . .
 
-# Build React app
+# Build the production version of the app
 RUN npm run build
 
-# Stage 2: Build Storybook
-FROM node:20-alpine AS build-storybook
-WORKDIR /saviti_saviti_ui_garden
+# Stage 2: Serve using Nginx
+FROM nginx:stable-alpine
 
-# Copy package.json and install dependencies
-COPY package*.json ./
-RUN npm install
+# Copy build output to Nginx html folder
+COPY --from=build /saviti_saviti_ui_garden_build_checks2/build /usr/share/nginx/html
 
-# Copy everything (ensure public/ exists)
-COPY public ./public
-COPY . .
+# Expose port 8018
+EXPOSE 8018
 
-# Build Storybook
-RUN npm run build-storybook
-
-# Stage 3: Serve both with Nginx
-FROM nginx:alpine
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy React app build
-RUN mkdir -p /usr/share/nginx/html/app
-COPY --from=build-react /saviti_saviti_ui_garden/build /usr/share/nginx/html/app
-
-# Copy Storybook build
-RUN mkdir -p /usr/share/nginx/html/storybook
-COPY --from=build-storybook /saviti_saviti_ui_garden/storybook-static /usr/share/nginx/html/storybook
-
-# Copy nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 8083
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
