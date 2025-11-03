@@ -44,6 +44,8 @@ Each component has at least **two Jest tests**:
 To run all tests:
 npm test
 
+## Demonstration
+
 ## Pre-commit hooks:
 
 1. ESLint
