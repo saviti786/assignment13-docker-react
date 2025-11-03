@@ -1,18 +1,17 @@
-# Assignment 12 – Web Component Library
+# Assignment 13 – Component Library with Husky, Eslint and Prettier
 
 ## Author: Saviti Saviti
 
 ---
 
 ## Overview
-This project is a **React + Storybook Component Library** built using **TypeScript** and **Styled Components**.
 
-It demonstrates reusable and responsive UI components that can be used to build consistent interfaces.
-Each component supports both default and disabled states and has been tested for visibility and style changes.
+This project is a React + TypeScript UI Component Library with code quality checks, pre-commit hooks, and CI/CD workflow implemented.
 
 ---
 
 ## Components Included
+
 The library includes the following components:
 
 - Button
@@ -26,6 +25,7 @@ The library includes the following components:
 - Card
 
 Each component contains the following files:
+
 - ComponentName.tsx
 - ComponentName.stories.tsx
 - ComponentName.test.tsx
@@ -35,30 +35,30 @@ Each component contains the following files:
 ---
 
 ## Tests
+
 Each component has at least **two Jest tests**:
+
 1. Checks that the component is visible in the DOM
 2. Confirms that the background or style changes when in the disabled state
 
 To run all tests:
 npm test
 
-## Storybook
-Storybook provides a development environment to view and interact with components.
-<br>
-To start Storybook locally:
-<br>
-npm run storybook
+## Pre-commit hooks:
+
+1. ESLint
+2. Prettier
+3. Unit Tests
+4. CI/CD workflow using GitHub Actions
 
 ## Build and Run with Docker
 
 1. **Build the Docker image:**
 
-docker build -t lastName_firstName_coding_assignment12 .
+docker build -t lastName_firstName_coding_assignment13 .
 <br>
-docker run -d -p 8083:8083 --name lastName_firstName_coding_assignment12 lastName_firstName_coding_assignment12
+docker run -p 8018:80 --name lastName_firstName_coding_assignment13 lastName_firstName_coding_assignment13
 
 2.  **Open in browser:**
 
-React App: http://localhost:8083/app/
-<br>
-Storybook: http://localhost:8083/storybook/
+React App: http://localhost:8018/
